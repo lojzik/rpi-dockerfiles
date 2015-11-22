@@ -1,4 +1,4 @@
-FROM lojzik/debian:jessie
+FROM lojzik/rpi-debian:jessie
 
 EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]

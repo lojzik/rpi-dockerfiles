@@ -1,4 +1,4 @@
-FROM lojzik/php-cli:latest
+FROM lojzik/rpi-php-cli:latest
 RUN apt-get update \ 
     && apt-get install -y \
     php5-fpm \
