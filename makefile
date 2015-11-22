@@ -46,4 +46,8 @@ $(NS)/rpi-mariadb:
 	$(BUILD)
 	$(PUSH)
 
+$(NS)/rpi-mono:
+	$(BUILD)
+	$(PUSH)
+
 		
