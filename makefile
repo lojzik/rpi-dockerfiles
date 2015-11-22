@@ -3,6 +3,7 @@ NS=lojzik
 ROOTDIR=.
 
 BUILD=docker build -t $@ --rm  $(ROOTDIR)/$(@F)
+PUSH=docker push 
 
 all:  
 
@@ -18,24 +19,31 @@ build-all: $(NS)/rpi-nginx $(NS)/rpi-php-cli $(NS)/rpi-php-fpm $(NS)/rpi-i2c $(N
 	
 $(NS)/rpi-nginx: 
 	$(BUILD)
+	$(PUSH)
 
 $(NS)/rpi-php-cli: 
 	$(BUILD)
+	$(PUSH)
 		
-$(NS)/rpi-php-fpm: $(NS)/php-cli
+$(NS)/rpi-php-fpm: $(NS)/rpi-php-cli
 	$(BUILD)
+	$(PUSH)
 
 $(NS)/rpi-i2c: 
 	$(BUILD)
+	$(PUSH)
 
 $(NS)/rpi-python: 
 	$(BUILD)
+	$(PUSH)
 	
-$(NS)/rpi-adafruit: $(NS)/rpi-python
+$(NS)/rpi-adafruit: $(NS)/rpi-rpi-python
 	$(BUILD)
+	$(PUSH)
 
 
-$(NS)/mariadb: $(NS)/debian\:jessie
+$(NS)/mariadb:
 	$(BUILD)
+	$(PUSH)
 
 		
