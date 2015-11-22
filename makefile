@@ -42,7 +42,7 @@ $(NS)/rpi-adafruit: $(NS)/rpi-python
 	$(PUSH)
 
 
-$(NS)/mariadb:
+$(NS)/rpi-mariadb:
 	$(BUILD)
 	$(PUSH)
 
