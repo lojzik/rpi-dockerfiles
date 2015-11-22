@@ -1,4 +1,4 @@
-FROM lojzik/debian:jessie
+FROM lojzik/rpi-debian:jessie
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
 RUN mkdir /docker-entrypoint-initdb.d
