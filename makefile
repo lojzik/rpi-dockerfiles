@@ -3,7 +3,7 @@ NS=lojzik
 ROOTDIR=.
 
 BUILD=docker build -t $@ --rm  $(ROOTDIR)/$(@F)
-PUSH=docker push 
+PUSH=docker push $@ 
 
 all:  
 
