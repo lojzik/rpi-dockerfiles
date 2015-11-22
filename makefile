@@ -37,7 +37,7 @@ $(NS)/rpi-python:
 	$(BUILD)
 	$(PUSH)
 	
-$(NS)/rpi-adafruit: $(NS)/rpi-rpi-python
+$(NS)/rpi-adafruit: $(NS)/rpi-python
 	$(BUILD)
 	$(PUSH)
 
