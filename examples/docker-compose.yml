@@ -1,0 +1,56 @@
+nginx:
+  container_name: nginx
+  image: lojzik/rpi-nginx
+  ports: 
+    - "80:80"
+    - "443:443"
+  volumes:
+    - ./www:/var/www/html 
+    - ./nginx/etc/default:/etc/nginx/sites-available/default
+    - ./nginx/log:/var/log/nginx
+  volumes_from: 
+    - tt-rss     
+  links:
+    - php-fpm
+    - gogs
+    - aspnet      
+php-fpm:
+  container_name: php-fpm
+  image: lojzik/rpi-php-fpm
+  volumes:
+    - ./www:/var/www/html
+    - ./php/log:/var/log
+  volumes_from: 
+    - tt-rss     
+  links:
+    - mariadb
+gogs:
+  container_name: gogs
+  image: lojzik/rpi-gogs
+  ports:
+    - "3000:3000"
+    - "8022:22"
+  volumes:
+    - ./gogs-data:/data
+aspnet:
+  container_name: aspnet
+  image: lojzik/rpi-aspnet-demo:1.0.0-rc1-final
+  ports: 
+    - "5000:5000"
+mariadb:
+  container_name: mariadb
+  image: lojzik/rpi-mariadb
+  environment:
+    - MYSQL_ROOT_PASSWORD=heslo       
+  volumes:
+    - ./mysql/data:/var/lib/mysql
+    - ./mysql/log:/var/log/mysql
+tt-rss:
+  container_name: tt-rss
+  image: lojzik/rpi-ttrss
+  volumes:
+    - ./ttrss/data:/data
+    - /tt-rss
+  links:
+    - mariadb
+     
