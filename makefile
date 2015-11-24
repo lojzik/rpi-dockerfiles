@@ -15,7 +15,7 @@ delete-untagged:
 delete-stopped:
 	docker rm $$(docker ps -a -q)
 
-build-all: $(NS)/rpi-nginx $(NS)/rpi-php-cli $(NS)/rpi-php-fpm $(NS)/rpi-i2c $(NS)/rpi-python $(NS)/rpi-adafruit $(NS)/mariadb 
+build-all: $(NS)/rpi-nginx $(NS)/rpi-php-cli $(NS)/rpi-php-fpm $(NS)/rpi-i2c $(NS)/rpi-python $(NS)/rpi-adafruit $(NS)/rpi-mariadb $(NS)/rpi-mono $(NS)/rpi-gogs     
 	
 $(NS)/rpi-nginx: 
 	$(BUILD)
@@ -50,4 +50,11 @@ $(NS)/rpi-mono:
 	$(BUILD)
 	$(PUSH)
 
+$(NS)/rpi-gogs\:v0.7.19:
+	$(BUILD)
+	$(PUSH)
+
+$(NS)/rpi-ttrss:
+	$(BUILD)
+#	$(PUSH)
 		
