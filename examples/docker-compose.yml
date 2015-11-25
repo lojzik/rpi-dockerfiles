@@ -26,7 +26,7 @@ php-fpm:
     - mariadb
 gogs:
   container_name: gogs
-  image: lojzik/rpi-gogs
+  image: lojzik/rpi-gogs:v0.7.22
   ports:
     - "3000:3000"
     - "8022:22"
