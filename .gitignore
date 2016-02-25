@@ -1,0 +1,7 @@
+*/rootfs
+*/*.xz
+examples/gogs-data/
+examples/mysql/
+examples/nginx/log/
+examples/php/
+examples/ttrss/
