@@ -6,7 +6,8 @@ RUN mkdir /docker-entrypoint-initdb.d
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 199369E5404BD5FC7D2FE43BCBCB082A1BB943DB
 
 ENV MARIADB_MAJOR 10.0
-ENV MARIADB_VERSION 10.0.22-0+deb8u1
+#ENV MARIADB_VERSION 10.0.22-0+deb8u1
+ENV MARIADB_VERSION 10.0.23-0+deb8u1
 
 
 RUN  { \
